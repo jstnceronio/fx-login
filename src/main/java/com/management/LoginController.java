@@ -1,6 +1,5 @@
 package com.management;
 
-/*
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import net.synedra.validatorfx.*; */
+import net.synedra.validatorfx.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -28,11 +27,10 @@ public class LoginController implements Initializable {
     public VBox vbBtn;
     public PasswordField txtConfirm;
 
-    // private Validator validator = new Validator();
+    private Validator validator = new Validator();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*
         validator.createCheck()
                 .dependsOn("username", txtUser.textProperty())
                 .withMethod(c -> {
@@ -74,10 +72,10 @@ public class LoginController implements Initializable {
                 validator.containsErrorsProperty(),
                 Bindings.concat("Cannot sign up:\n", validator.createStringBinding())
         );
-        vbBtn.getChildren().add(signUpWrapper); */
+        vbBtn.getChildren().add(signUpWrapper);
     }
 
     public void login(ActionEvent actionEvent) {
-        // User user = new User(1, txtUser.getText(), txtPassword.getText());
+        User user = new User(1, txtUser.getText(), txtPassword.getText());
     }
 }
